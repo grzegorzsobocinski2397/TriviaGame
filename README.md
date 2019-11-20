@@ -1,0 +1,2 @@
+# PartyCalculation
+Party Calculation Project
