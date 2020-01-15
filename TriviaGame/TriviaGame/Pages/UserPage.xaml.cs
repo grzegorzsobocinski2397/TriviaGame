@@ -10,6 +10,8 @@ namespace TriviaGame.Pages
         public UserPage()
         {
             InitializeComponent();
+
+            DataContext = new UserViewModel();
         }
     }
 }
