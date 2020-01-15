@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace TriviaGame.Converters
+namespace TriviaGame
 {
     /// <summary>
     /// Base class for converters that do convert values to specific XAML objects/properties.

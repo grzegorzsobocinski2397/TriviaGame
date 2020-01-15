@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Globalization;
 using TriviaGame.Pages;
 
-namespace TriviaGame.Converters
+namespace TriviaGame
 {
     /// <summary>
     /// Converts the ENUM values to XAML pages.
