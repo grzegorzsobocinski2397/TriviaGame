@@ -84,6 +84,7 @@
     </Compile>
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\FinalViewModel.cs" />
     <Compile Include="ViewModels\FirstPageViewModel.cs" />
     <Compile Include="ViewModels\HighscoresViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />

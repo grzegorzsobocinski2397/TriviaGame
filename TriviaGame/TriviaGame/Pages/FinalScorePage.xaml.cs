@@ -10,6 +10,8 @@ namespace TriviaGame.Pages
         public FinalScorePage()
         {
             InitializeComponent();
+
+            DataContext = new FinalViewModel();
         }
     }
 }
