@@ -23,5 +23,18 @@ namespace TriviaGame
         }
 
         #endregion PropertyChanged
+
+        #region Protected Methods
+
+        /// <summary>
+        /// Changes the current page of the main window
+        /// </summary>
+        /// <param name="page">Redirect application to this page.</param>
+        protected void ChangePage(ApplicationPage page)
+        {
+            ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = page;
+        }
+
+        #endregion Protected Methods
     }
 }
