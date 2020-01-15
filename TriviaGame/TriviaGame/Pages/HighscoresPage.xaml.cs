@@ -10,6 +10,8 @@ namespace TriviaGame.Pages
         public HighscoresPage()
         {
             InitializeComponent();
+
+            DataContext = new HighscoresViewModel();
         }
     }
 }
