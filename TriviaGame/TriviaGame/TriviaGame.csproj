@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,7 +64,11 @@
     </ApplicationDefinition>
     <Compile Include="Converters\ApplicationPageValueConverter.cs" />
     <Compile Include="Converters\BaseValueConverter.cs" />
+    <Compile Include="Encryption\EncrpytionValues.cs" />
     <Compile Include="Models\ApplicationPage.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Save.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Pages\FinalScorePage.xaml.cs">
       <DependentUpon>FinalScorePage.xaml</DependentUpon>
     </Compile>
