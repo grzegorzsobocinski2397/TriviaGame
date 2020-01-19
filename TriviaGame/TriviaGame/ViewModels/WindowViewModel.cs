@@ -47,7 +47,6 @@ namespace TriviaGame.ViewModels
             // Creates commands
             CloseWindowCommand = new RelayCommand(() => window.Close());
 
-            // Sets the first page as ChooseGamePage
             CurrentPage = ApplicationPage.First;
         }
 
