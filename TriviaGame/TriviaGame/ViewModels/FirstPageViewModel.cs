@@ -21,6 +21,11 @@ namespace TriviaGame
         /// </summary>
         private const string FILE_NAME = "QUESTIONS.XML";
 
+        /// <summary>
+        /// Allow user to go to the next page. User has loaded question and is ready to play.
+        /// </summary>
+        private bool areQuestionsLoaded = false;
+
         #endregion Private Fields
 
         #region Public Properties
@@ -56,7 +61,7 @@ namespace TriviaGame
         public FirstPageViewModel()
         {
             HighscoresCommand = new RelayCommand(() => ChangePage(ApplicationPage.Highscores));
-            UserPageCommand = new RelayCommand(() => ChangePage(ApplicationPage.User));
+            UserPageCommand = new RelayCommand(() => StartGame());
             LoadCommand = new RelayCommand(() => OpenFileDialog());
             CheckForFile();
         }
@@ -65,6 +70,24 @@ namespace TriviaGame
 
         #region Private Methods
 
+        /// <summary>
+        /// Try starting the new game if there are questions loaded.
+        /// </summary>
+        private void StartGame()
+        {
+            if (areQuestionsLoaded)
+            {
+                ChangePage(ApplicationPage.User);
+            }
+            else
+            {
+                InformationText = $"Please load some questions before starting the game.";
+            }
+        }
+
+        /// <summary>
+        /// Check if there were some questions serialized.
+        /// </summary>
         private void CheckForFile()
         {
             if (File.Exists($"{Environment.CurrentDirectory}\\{FILE_NAME}"))
@@ -73,6 +96,7 @@ namespace TriviaGame
                 InformationText = $"We've found {save.Questions.Count} previously loaded questions!";
             }
         }
+
         /// <summary>
         /// Open up a File Dialog window and let the user choose an .xls file.
         /// </summary>
@@ -107,8 +131,11 @@ namespace TriviaGame
                     Question question = new Question(values[0], answer);
                     questions.Add(question);
                 }
+                areQuestionsLoaded = questions.Count > 0;
 
                 SerializeQuestions(questions);
+
+                InformationText = $"Succesfully loaded {questions.Count} questions. Click start and let the game begin!";
             }
         }
 
@@ -206,6 +233,7 @@ namespace TriviaGame
 
                         Save save = (Save)serializer.ReadObject(memoryStream);
                         aesCryptoService.Dispose();
+                        areQuestionsLoaded = true;
                         return save;
                     }
                 }
