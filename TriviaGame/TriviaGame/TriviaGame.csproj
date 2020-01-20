@@ -110,6 +110,7 @@
     <Compile Include="ViewModels\Base\RelayParameterCommand.cs" />
     <Compile Include="ViewModels\FinalViewModel.cs" />
     <Compile Include="ViewModels\FirstPageViewModel.cs" />
+    <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\HighscoresViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
     <Compile Include="ViewModels\WindowViewModel.cs" />

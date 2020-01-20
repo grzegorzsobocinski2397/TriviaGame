@@ -3,7 +3,8 @@ using System.Windows.Input;
 
 namespace TriviaGame
 {
-    internal class RelayParameterCommand : ICommand {
+    internal class RelayParameterCommand : ICommand
+    {
         #region Private Members
 
         /// <summary>
@@ -58,5 +59,4 @@ namespace TriviaGame
 
         #endregion Command Methods
     }
-}
 }

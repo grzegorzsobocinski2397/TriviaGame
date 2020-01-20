@@ -3,12 +3,13 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:TriviaGame.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      mc:Ignorable="d"  Height="600" Width="480"
       Title="GamePage">
 
     <Grid>
-        
+        <Button CommandParameter="{StaticResource FalseValue}" Command="{Binding OptionCommand}" Content="False" HorizontalAlignment="Left" Margin="63,332,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button CommandParameter="{StaticResource TrueValue}" Command="{Binding OptionCommand}" Content="True" HorizontalAlignment="Left" Margin="276,337,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock Text="{Binding QuestionText}" Foreground="Red" HorizontalAlignment="Left" Margin="151,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="262"/>
+        <TextBlock Text="{Binding MainText}" Foreground="Red" HorizontalAlignment="Left" Margin="106,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="191"/>
     </Grid>
 </Page>
