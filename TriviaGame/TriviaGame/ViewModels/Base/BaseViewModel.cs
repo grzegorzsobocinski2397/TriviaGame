@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using GalaSoft.MvvmLight;
+using System.ComponentModel;
 using System.Windows;
 using TriviaGame.ViewModels;
 
@@ -7,7 +8,7 @@ namespace TriviaGame
     /// <summary>
     /// Base View Model that implements <see cref="INotifyPropertyChanged"/> for proper Data Binding.
     /// </summary>
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : ViewModelBase, INotifyPropertyChanged
     {
         #region PropertyChanged
 
