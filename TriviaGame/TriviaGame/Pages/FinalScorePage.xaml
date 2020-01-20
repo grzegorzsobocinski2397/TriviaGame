@@ -6,9 +6,10 @@
       mc:Ignorable="d"  Height="600" Width="480"
       Title="FinalScorePage">
 
-    <Grid>s
+    <Grid>
         <Button Command="{Binding ExitCommand}" Content="Exit" HorizontalAlignment="Left" Margin="70,323,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-1.217,1.13"/>
         <Button Command="{Binding HighscoresCommand}" Content="Highscores" HorizontalAlignment="Left" Margin="207,328,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.364,3.303"/>
         <Button Command="{Binding ResultsCommand}" Content="Button" HorizontalAlignment="Left" Margin="353,323,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock Text="{Binding MainText}" Foreground="Red" HorizontalAlignment="Left" Margin="170,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="72" Width="191"/>
     </Grid>
 </Page>
