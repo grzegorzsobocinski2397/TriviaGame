@@ -24,6 +24,11 @@ namespace TriviaGame
         /// </summary>
         private bool areQuestionsLoaded = false;
 
+        /// <summary>
+        /// File handler for a <see cref="Save"/>, which saves questions.
+        /// </summary>
+        private readonly SaveFileHandler fileHandler = new SaveFileHandler();
+
         #endregion Private Fields
 
         #region Public Properties
@@ -90,7 +95,7 @@ namespace TriviaGame
         {
             if (File.Exists($"{Environment.CurrentDirectory}\\{FILE_NAME}"))
             {
-                Save save = SaveFileHandler.DeserializeQuestions();
+                Save save = fileHandler.DeserializeQuestions();
                 areQuestionsLoaded = true;
                 InformationText = $"We've found {save.Questions.Count} previously loaded questions!";
             }
@@ -132,7 +137,7 @@ namespace TriviaGame
                 }
                 areQuestionsLoaded = questions.Count > 0;
 
-                SaveFileHandler.SerializeQuestions(questions);
+                fileHandler.SerializeFile(questions);
 
                 InformationText = $"Succesfully loaded {questions.Count} questions. Click start and let the game begin!";
             }
