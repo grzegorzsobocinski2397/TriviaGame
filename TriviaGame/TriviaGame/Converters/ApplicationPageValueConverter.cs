@@ -37,6 +37,7 @@ namespace TriviaGame
                 case ApplicationPage.User:
                     return new UserPage();
 
+                case ApplicationPage.None:
                 default:
                     Debugger.Break();
                     return null;
