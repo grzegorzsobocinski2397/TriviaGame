@@ -81,6 +81,8 @@
     <Compile Include="Converters\BaseValueConverter.cs" />
     <Compile Include="Converters\BooleanToForegroundValueConverter.cs" />
     <Compile Include="Encryption\EncrpytionValues.cs" />
+    <Compile Include="Helpers\SaveFileHandler.cs" />
+    <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\ApplicationPage.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Save.cs" />
@@ -105,6 +107,7 @@
     </Compile>
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\Base\RelayParameterCommand.cs" />
     <Compile Include="ViewModels\FinalViewModel.cs" />
     <Compile Include="ViewModels\FirstPageViewModel.cs" />
     <Compile Include="ViewModels\HighscoresViewModel.cs" />
