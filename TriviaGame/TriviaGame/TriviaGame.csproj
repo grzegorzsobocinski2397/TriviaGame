@@ -64,6 +64,7 @@
     </ApplicationDefinition>
     <Compile Include="Converters\ApplicationPageValueConverter.cs" />
     <Compile Include="Converters\BaseValueConverter.cs" />
+    <Compile Include="Converters\BooleanToForegroundValueConverter.cs" />
     <Compile Include="Encryption\EncrpytionValues.cs" />
     <Compile Include="Models\ApplicationPage.cs" />
     <Compile Include="Models\Question.cs" />
