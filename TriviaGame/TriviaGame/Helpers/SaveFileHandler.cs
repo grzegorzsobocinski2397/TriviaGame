@@ -8,7 +8,10 @@ using TriviaGame.Models;
 
 namespace TriviaGame.Helpers
 {
-    internal static class SaveFileHandler
+    /// <summary>
+    /// File handler for a <see cref="Save"/>, which saves questions.
+    /// </summary>
+    internal class SaveFileHandler : BaseFileHandler
     {
         #region Private Fields
 
@@ -25,7 +28,7 @@ namespace TriviaGame.Helpers
         /// Serialize the loaded questions.
         /// </summary>
         /// <param name="questions">Questions loaded by the user.</param>
-        public static void SerializeQuestions(List<Question> questions)
+        public void SerializeFile(List<Question> questions)
         {
             Save save = new Save(questions);
 
@@ -88,7 +91,7 @@ namespace TriviaGame.Helpers
         /// Deserialize previously loaded questions.
         /// </summary>
         /// <returns>Save file that contains previously loaded questions.</returns>
-        public static Save DeserializeQuestions()
+        public Save DeserializeQuestions()
         {
             try
             {
@@ -138,35 +141,12 @@ namespace TriviaGame.Helpers
             catch (Exception exception)
             {
                 MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-                RemoveFile();
+                RemoveFile(FILE_NAME);
             }
 
             return null;
         }
 
         #endregion Public Methods
-
-        #region Private Methods
-
-        /// <summary>
-        /// Removes the file with serialized questions.
-        /// </summary>
-        private static void RemoveFile()
-        {
-            try
-            {
-                File.Delete($"{Environment.CurrentDirectory}\\{FILE_NAME}");
-            }
-            catch (UnauthorizedAccessException exception)
-            {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-        }
-
-        #endregion Private Methods
     }
 }
