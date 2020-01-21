@@ -9,13 +9,34 @@ namespace TriviaGame
     /// </summary>
     internal abstract class BaseFileHandler
     {
+        #region Private Fields
+
+        /// <summary>
+        /// File destination with a name.
+        /// </summary>
+        private readonly string fileName;
+
+        #endregion Private Fields
+
+        #region Constructors
+
+        /// <summary>
+        /// Set the file name.
+        /// </summary>
+        /// <param name="fileName">File destination with name.</param>
+        public BaseFileHandler(string fileName)
+        {
+            this.fileName = fileName;
+        }
+
+        #endregion Constructors
+
         #region Protected Methods
 
         /// <summary>
         /// Removes the file with serialized questions.
         /// </summary>
-        /// <param name="fileName">File destination with name.</param>
-        protected void RemoveFile(string fileName)
+        protected void RemoveFile()
         {
             try
             {
@@ -32,5 +53,18 @@ namespace TriviaGame
         }
 
         #endregion Protected Methods
+
+        #region Public Methods
+
+        /// <summary>
+        /// Checks if the file exists.
+        /// </summary>
+        /// <returns>Boolean value of current file existance.</returns>
+        public bool DoesFileExist()
+        {
+            return File.Exists($"{Environment.CurrentDirectory}\\{fileName}");
+        }
+
+        #endregion Public Methods
     }
 }

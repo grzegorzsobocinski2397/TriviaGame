@@ -21,7 +21,12 @@ namespace TriviaGame.Helpers
         private const string FILE_NAME = "QUESTIONS.XML";
 
         #endregion Private Fields
+        #region Constructors
+        public SaveFileHandler() : base(FILE_NAME)
+        {
 
+        }
+        #endregion
         #region Public Methods
 
         /// <summary>
@@ -141,7 +146,7 @@ namespace TriviaGame.Helpers
             catch (Exception exception)
             {
                 MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-                RemoveFile(FILE_NAME);
+                RemoveFile();
             }
 
             return null;

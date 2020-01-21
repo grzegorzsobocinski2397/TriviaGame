@@ -6,6 +6,9 @@ using System.Windows;
 
 namespace TriviaGame
 {
+    /// <summary>
+    /// File handler for a <see cref="Scoreboard"/>, which saves user information with AES encryption.
+    /// </summary>
     internal class HighscoresFileHandler : BaseFileHandler
     {
         #region Private Fields
@@ -16,6 +19,14 @@ namespace TriviaGame
         private const string FILE_NAME = "SCORES.XML";
 
         #endregion Private Fields
+
+        #region Constructors
+
+        public HighscoresFileHandler() : base(FILE_NAME)
+        {
+        }
+
+        #endregion Constructors
 
         #region Public Methods
 
@@ -134,7 +145,7 @@ namespace TriviaGame
             catch (Exception exception)
             {
                 MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
-                RemoveFile(FILE_NAME);
+                RemoveFile();
             }
 
             return null;
