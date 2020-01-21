@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Title="Trivia Game" Height="600" Width="480">
+        Title="Trivia Game" Height="600" Width="780">
     <Window.Resources>
         <Style TargetType="{x:Type local:MainWindow}">
             <Setter Property="Template">
