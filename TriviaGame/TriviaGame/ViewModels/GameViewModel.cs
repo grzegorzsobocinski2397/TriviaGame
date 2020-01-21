@@ -1,8 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using TriviaGame.Helpers;
 using TriviaGame.Models;
+using TriviaGame.ViewModels;
 
 namespace TriviaGame
 {
@@ -29,6 +32,21 @@ namespace TriviaGame
         /// Current index of the question.
         /// </summary>
         private int questionCounter = 0;
+
+        /// <summary>
+        /// Multiply questions answered by this value to get the score.
+        /// </summary>
+        private const int SCORE_MULTIPLIER = 10;
+
+        /// <summary>
+        /// File handler for a <see cref="Save"/>, which saves questions.
+        /// </summary>
+        private readonly SaveFileHandler saveFileHandler = new SaveFileHandler();
+
+        /// <summary>
+        /// File handler for a <see cref="Scoreboard"/>, which saves user information with AES encryption.
+        /// </summary>
+        private readonly HighscoresFileHandler scoresFileHandler = new HighscoresFileHandler();
 
         #endregion Private Fields
 
@@ -60,7 +78,7 @@ namespace TriviaGame
         public GameViewModel()
         {
             OptionCommand = new RelayParameterCommand((parameter) => AnswerQuestion((bool)parameter));
-            questions = (SaveFileHandler.DeserializeQuestions()).Questions;
+            questions = (saveFileHandler.DeserializeQuestions()).Questions;
             activeQuestion = questions[0];
             GenerateText();
         }
@@ -109,7 +127,24 @@ namespace TriviaGame
         {
             ChangePage(ApplicationPage.FinalScore);
 
+            SaveScoreboard();
+
             MessengerInstance.Send(new NotificationMessage<List<Answer>>(answers, "FinalView"));
+        }
+
+        /// <summary>
+        /// Update or create a new scoreboard.
+        /// </summary>
+        private void SaveScoreboard()
+        {
+            User user = ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).User;
+            user.Score = answers.Where(a => a.IsCorrect).ToList().Count * SCORE_MULTIPLIER;
+
+            Scoreboard scoreboard = scoresFileHandler.DoesFileExist() ? scoresFileHandler.DeserializeScoreboard() : new Scoreboard();
+
+            scoreboard.Users.Add(user);
+
+            scoresFileHandler.SerializeScores(scoreboard);
         }
 
         #endregion Private Methods

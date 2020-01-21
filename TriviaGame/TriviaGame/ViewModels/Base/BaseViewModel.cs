@@ -8,7 +8,7 @@ namespace TriviaGame
     /// <summary>
     /// Base View Model that implements <see cref="INotifyPropertyChanged"/> for proper Data Binding.
     /// </summary>
-    public class BaseViewModel : ViewModelBase, INotifyPropertyChanged
+    internal class BaseViewModel : ViewModelBase, INotifyPropertyChanged
     {
         #region PropertyChanged
 
@@ -28,7 +28,7 @@ namespace TriviaGame
         #region Protected Methods
 
         /// <summary>
-        /// Changes the current page of the main window
+        /// Changes the current page of the main window.
         /// </summary>
         /// <param name="page">Redirect application to this page.</param>
         protected void ChangePage(ApplicationPage page)

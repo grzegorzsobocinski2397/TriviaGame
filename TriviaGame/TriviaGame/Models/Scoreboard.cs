@@ -26,9 +26,9 @@ namespace TriviaGame
         /// Initalize the instance of Scoreboard.
         /// </summary>
         /// <param name="users">List of all users that have played the game.</param>
-        public Scoreboard(List<User> users)
+        public Scoreboard()
         {
-            Users = users;
+            Users = new List<User>();
         }
 
         #endregion Constructor

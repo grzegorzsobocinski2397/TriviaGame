@@ -10,6 +10,16 @@ namespace TriviaGame
 {
     internal class FinalViewModel : BaseViewModel
     {
+        #region Private Fields
+
+
+        /// <summary>
+        /// File handler for a <see cref="Scoreboard"/>, which saves user information with AES encryption.
+        /// </summary>
+        private readonly HighscoresFileHandler fileHandler = new HighscoresFileHandler();
+
+        #endregion Private Fields
+
         #region Public Properties
 
         /// <summary>
@@ -84,7 +94,6 @@ namespace TriviaGame
                 MainText = $"You've answered {totalCorrectAnswers} questions correctly out of {answers.Count}";
             }
         }
-
         #endregion Private Methods
     }
 }

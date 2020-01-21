@@ -8,6 +8,12 @@
 
     <Grid>
         <Button Command="{Binding ReturnCommand}" Content="Back" HorizontalAlignment="Left" Margin="26,38,0,0" VerticalAlignment="Top" Width="75"/>
-
+        <ListView ItemsSource="{Binding Users}" HorizontalAlignment="Left" Height="100" Margin="36,229,0,0" VerticalAlignment="Top" Width="385">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Foreground="Red" Text="{Binding Score}"></TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

@@ -81,9 +81,12 @@
     <Compile Include="Converters\BaseValueConverter.cs" />
     <Compile Include="Converters\BooleanToForegroundValueConverter.cs" />
     <Compile Include="Encryption\EncrpytionValues.cs" />
+    <Compile Include="Helpers\BaseFileHandler.cs" />
+    <Compile Include="Helpers\HighscoresFileHandler.cs" />
     <Compile Include="Helpers\SaveFileHandler.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\ApplicationPage.cs" />
+    <Compile Include="Models\Scoreboard.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Save.cs" />
     <Compile Include="Models\User.cs" />
