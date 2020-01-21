@@ -1,4 +1,7 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
+using TriviaGame.Models;
+using TriviaGame.ViewModels;
 using TriviaGame.ViewModels.Base;
 
 namespace TriviaGame
@@ -56,6 +59,8 @@ namespace TriviaGame
             }
             else
             {
+                User user = new User(UserName);
+                ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).User = user;
                 ChangePage(ApplicationPage.Game);
             }
         }

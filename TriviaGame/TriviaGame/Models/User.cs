@@ -7,7 +7,7 @@ namespace TriviaGame.Models
     /// Representation of the current player.
     /// </summary>
     [DataContract(Name = "User")]
-    internal struct User
+    internal class User
     {
         #region Public Properties
 
@@ -15,19 +15,19 @@ namespace TriviaGame.Models
         /// User's name which will be also displayed in the highscores.
         /// </summary>
         [DataMember()]
-        public string Name { get; }
+        public string Name { get; set; }
 
         /// <summary>
         /// User's score which is calculated by number of correct questions.
         /// </summary>
         [DataMember()]
-        public int Score { get; set; }
+        public int Score { get; set; } = 0;
 
         /// <summary>
         /// Time of the game start.
         /// </summary>
         [DataMember()]
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Now;
 
         #endregion Public Properties
 
@@ -40,8 +40,6 @@ namespace TriviaGame.Models
         public User(string name)
         {
             Name = name;
-            Score = 0;
-            StartDate = DateTime.Now;
         }
 
         #endregion Constructors

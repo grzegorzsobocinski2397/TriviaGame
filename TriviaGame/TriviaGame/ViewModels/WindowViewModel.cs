@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
+using TriviaGame.Models;
 using TriviaGame.ViewModels.Base;
 
 namespace TriviaGame.ViewModels
@@ -10,6 +11,15 @@ namespace TriviaGame.ViewModels
     /// </summary>
     internal class WindowViewModel : BaseViewModel
     {
+        #region Public Properties
+
+        /// <summary>
+        /// Representation of the current player.
+        /// </summary>
+        internal User User { get; set; }
+
+        #endregion Public Properties
+
         #region Private Members
 
         /// <summary>
