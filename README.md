@@ -14,5 +14,5 @@ Projekt wystarczy sklonować a następnie pobrać wymagane paczki.
 
 # Autorzy
 
-- Grzegorz Sobociński
-- Piotr Szczypka
+- Grzegorz Sobociński -  [grzegorzsobocinski2397](https://github.com/grzegorzsobocinski2397) 
+- Piotr Szczypka - [xkertoip](https://github.com/xkertoip)
