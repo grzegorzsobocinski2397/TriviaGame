@@ -20,15 +20,6 @@ namespace TriviaGame.ViewModels
 
         #endregion Public Properties
 
-        #region Private Members
-
-        /// <summary>
-        /// The window for this view model
-        /// </summary>
-        private readonly Window window;
-
-        #endregion Private Members
-
         #region Public Properties
 
         /// <summary>
@@ -51,12 +42,7 @@ namespace TriviaGame.ViewModels
 
         public WindowViewModel(Window window)
         {
-            // Binds the window to the view model
-            this.window = window;
-
-            // Creates commands
             CloseWindowCommand = new RelayCommand(() => window.Close());
-
             CurrentPage = ApplicationPage.First;
         }
 
