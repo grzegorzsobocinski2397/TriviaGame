@@ -1,77 +1,49 @@
 ﻿<Page x:Class="TriviaGame.Pages.FirstPage"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d"  Height="600" Width="780"
+      Height="600" Width="780"
       Title="FirstPage">
 
-    <Grid Background="#FDFBF5">
-        <Grid Background="#619AAE" Height="35" VerticalAlignment="Top">
-            <StackPanel  Orientation="Horizontal" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right">
-
-                <Button Width="30" Height="30" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" >
-                    <materialDesign:PackIcon Kind="Power" />
-                </Button>
-
-            </StackPanel>
-        </Grid>
+    <Grid Background="{StaticResource ApplicationBackgroundBrush}">
         <StackPanel Margin="0 120 0 0">
             <Grid Height="250" Margin="50 0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80"/>
-                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="170" />
                 </Grid.RowDefinitions>
-                <TextBlock                     
-                    FontSize="64" 
-                    FontWeight="Bold"  
-                    Text="Welcome to Trivia Game!" >
+                <TextBlock
+                    Style="{StaticResource HeaderTextBlock}"
+                    Text="Welcome to Trivia Game!">
                 </TextBlock>
-                <TextBlock      
-                    Text="{Binding InformationText}"
+                <TextBlock
+                    Style="{StaticResource LightBrownContent}"
+                    Grid.Row="1"
                     Margin="30"
-                    Grid.Row="1" 
-                    FontSize="28"/>
+                    Text="{Binding InformationText}" />
             </Grid>
-            <StackPanel 
+            <StackPanel
                 HorizontalAlignment="Center"
                 Orientation="Horizontal"
-                Margin="50 20" 
+                Margin="50 20"
                 Height="100">
-                <Button 
+                <Button
                     Command="{Binding UserPageCommand}"
-                    Content="Start"
                     Style="{StaticResource RoundButtonTemplate}"
-                    HorizontalAlignment="Left"
                     Margin="80 0 50 0"
-                    Width="150"
-                    Height="80"
-                    FontSize="30"
-                    FontWeight="Bold"
-                    FontFamily="Calibri"/>
-                <Button 
+                    Content="Start"
+                    HorizontalAlignment="Left" />
+                <Button
                     Command="{Binding HighscoresCommand}"
-                    Content="Highscores"
-                    Style="{StaticResource RoundButtonTemplate}"     
-                    HorizontalAlignment="Center"
-                    Margin="50 0"
-                    Width="150"
-                    Height="80"
-                    FontSize="30"
-                    FontWeight="Bold"
-                    FontFamily="Calibri"/>
-                <Button 
-                    Command="{Binding LoadCommand}"
-                    Content="Load"
                     Style="{StaticResource RoundButtonTemplate}"
-                    Width="150"
+                    Margin="50 0"
+                    Content="Highscores"
+                    HorizontalAlignment="Center" />
+                <Button
+                    Command="{Binding LoadCommand}"
+                    Style="{StaticResource RoundButtonTemplate}"
                     Margin="50 0 80 0"
-                    HorizontalAlignment="Right"   
-                    Height="80"
-                    FontSize="30"
-                    FontWeight="Bold"
-                    FontFamily="Calibri"/>
+                    Content="Load"
+                    HorizontalAlignment="Right" />
             </StackPanel>
             <StackPanel
                 Height="90"
@@ -79,21 +51,12 @@
                 Margin="30 0">
                 <Image
                     Source="/Resources/Vector.png"
-                    Width="60"/>
+                    Width="60" Margin="0,21,0,0" />
                 <TextBlock
-                    FontSize="28"
-                    Foreground="#444444"
-                    Margin="20 30 0 0">
-                    Check out our GitHub page !
-                </TextBlock>
-
-
-
+                    FontSize="{StaticResource FontSizeRegular}"
+                    Foreground="{StaticResource BlackForegroundBrush}"
+                    Margin="20,46,0,14" Text="Check out our GitHub page!" />
             </StackPanel>
-
         </StackPanel>
-
     </Grid>
 </Page>
-
-
