@@ -12,3 +12,7 @@ Aplikacja serializuje wyniki osiągnięte przez gracza i wyświetla je w formie 
 # Instalacja
 Projekt wystarczy sklonować a następnie pobrać wymagane paczki. 
 
+# Autorzy
+
+- Grzegorz Sobociński
+- Piotr Szczypka
