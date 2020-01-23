@@ -7,7 +7,10 @@ using TriviaGame.Models;
 
 namespace TriviaGame
 {
-    internal class ResultsViewModel : BaseViewModel
+    /// <summary>
+    /// View Model for <see cref="ResultsPage"/>, which displays overall summary of user game.
+    /// </summary>
+    public class ResultsViewModel : BaseViewModel
     {
         #region Public Properties
 
@@ -26,7 +29,7 @@ namespace TriviaGame
         #region Commands
 
         /// <summary>
-        /// Return back to the Final Score window.
+        /// Return back to the <see cref="ApplicationPage.FinalScore"/> window.
         /// </summary>
         public ICommand ReturnCommand { get; set; }
 

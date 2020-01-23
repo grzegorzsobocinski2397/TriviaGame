@@ -9,7 +9,7 @@ namespace TriviaGame
     /// <summary>
     /// File handler for a <see cref="Scoreboard"/>, which saves user information with AES encryption.
     /// </summary>
-    internal class HighscoresFileHandler : BaseFileHandler
+    public class HighscoresFileHandler : BaseFileHandler
     {
         #region Private Fields
 
@@ -22,6 +22,9 @@ namespace TriviaGame
 
         #region Constructors
 
+        /// <summary>
+        /// File handler for a <see cref="Scoreboard"/>, which saves user information with AES encryption.
+        /// </summary>
         public HighscoresFileHandler() : base(FILE_NAME)
         {
         }
@@ -31,9 +34,9 @@ namespace TriviaGame
         #region Public Methods
 
         /// <summary>
-        /// Serialize the loaded questions.
+        /// Serialize user scores (current and previous).
         /// </summary>
-        /// <param name="questions">Questions loaded by the user.</param>
+        /// <param name="scoreboard">Scoreboard that contains all he users that have played this game.</param>
         public void SerializeScores(Scoreboard scoreboard)
         {
             try
@@ -73,28 +76,28 @@ namespace TriviaGame
                         }
                         catch (FileNotFoundException exception)
                         {
-                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "File Not Found Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                         catch (ArgumentNullException exception)
                         {
-                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Argument Null Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                         catch (ArgumentException exception)
                         {
-                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Argument Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                 }
             }
             catch (Exception exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
         /// <summary>
-        /// Deserialize previously loaded questions.
+        /// Deserialize user scores.
         /// </summary>
-        /// <returns>Save file that contains previously loaded questions.</returns>
+        /// <returns>Scoreboard that contains all he users that have played this game.</returns>
         public Scoreboard DeserializeScoreboard()
         {
             try
@@ -128,23 +131,23 @@ namespace TriviaGame
             }
             catch (FileNotFoundException exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "File Not Found Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (UnauthorizedAccessException exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Unauthorized Access Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (ArgumentNullException exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Argument Null Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (ArgumentException exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Argument Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (Exception exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
                 RemoveFile();
             }
 

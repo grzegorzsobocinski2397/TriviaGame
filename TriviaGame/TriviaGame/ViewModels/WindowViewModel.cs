@@ -6,10 +6,9 @@ using TriviaGame.ViewModels.Base;
 namespace TriviaGame.ViewModels
 {
     /// <summary>
-    /// View Model for the MainWindow contains basic information about the application such as round corners
-    /// or currently active page.
+    /// View Model for the MainWindow contains basic information about the application currently active page or user.
     /// </summary>
-    internal class WindowViewModel : BaseViewModel
+    public class WindowViewModel : BaseViewModel
     {
         #region Public Properties
 
@@ -45,6 +44,10 @@ namespace TriviaGame.ViewModels
 
         #region Constructor
 
+        /// <summary>
+        /// View Model for the MainWindow contains basic information about the application currently active page or user.
+        /// </summary>
+        /// <param name="window">Instance of the application's window.</param>
         public WindowViewModel(Window window)
         {
             CloseWindowCommand = new RelayCommand(() => window.Close());

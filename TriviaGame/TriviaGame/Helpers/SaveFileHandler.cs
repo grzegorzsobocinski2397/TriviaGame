@@ -11,7 +11,7 @@ namespace TriviaGame.Helpers
     /// <summary>
     /// File handler for a <see cref="Save"/>, which saves questions.
     /// </summary>
-    internal class SaveFileHandler : BaseFileHandler
+    public class SaveFileHandler : BaseFileHandler
     {
         #region Private Fields
 
@@ -21,12 +21,18 @@ namespace TriviaGame.Helpers
         private const string FILE_NAME = "QUESTIONS.XML";
 
         #endregion Private Fields
+
         #region Constructors
+
+        /// <summary>
+        /// File handler for a <see cref="Save"/>, which saves questions.
+        /// </summary>
         public SaveFileHandler() : base(FILE_NAME)
         {
-
         }
-        #endregion
+
+        #endregion Constructors
+
         #region Public Methods
 
         /// <summary>
@@ -74,21 +80,21 @@ namespace TriviaGame.Helpers
                         }
                         catch (FileNotFoundException exception)
                         {
-                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "File Not Found Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                         catch (ArgumentNullException exception)
                         {
-                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Argument Null Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                         catch (ArgumentException exception)
                         {
-                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            MessageBox.Show("A handled exception just occurred: " + exception.Message, "Argument Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                 }
             }
             catch (Exception exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -129,23 +135,23 @@ namespace TriviaGame.Helpers
             }
             catch (FileNotFoundException exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "File Not Found Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (UnauthorizedAccessException exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Unauthorized Access Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (ArgumentNullException exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Argument Null Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (ArgumentException exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Argument Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             catch (Exception exception)
             {
-                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("A handled exception just occurred: " + exception.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Warning);
                 RemoveFile();
             }
 

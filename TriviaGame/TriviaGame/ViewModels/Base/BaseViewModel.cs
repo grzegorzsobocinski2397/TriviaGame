@@ -8,11 +8,11 @@ namespace TriviaGame
     /// <summary>
     /// Base View Model that implements <see cref="INotifyPropertyChanged"/> for proper Data Binding.
     /// </summary>
-    internal class BaseViewModel : ViewModelBase, INotifyPropertyChanged
+    public class BaseViewModel : ViewModelBase, INotifyPropertyChanged
     {
         #region PropertyChanged
 
-        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
+        public new event PropertyChangedEventHandler PropertyChanged = (sender, e) => { };
 
         /// <summary>
         /// Invoked on a property changed in the View Models and Pages. Allows two way data binding.
@@ -36,7 +36,6 @@ namespace TriviaGame
             WindowViewModel windowViewModel = ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext);
             windowViewModel.PreviousPage = windowViewModel.CurrentPage;
             windowViewModel.CurrentPage = page;
-
         }
 
         /// <summary>
@@ -45,7 +44,7 @@ namespace TriviaGame
         /// <returns>Previously visited page.</returns>
         protected ApplicationPage GetPreviousPage()
         {
-            return ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage;
+            return ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).PreviousPage;
         }
 
         #endregion Protected Methods

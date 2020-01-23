@@ -7,7 +7,7 @@ namespace TriviaGame
     /// <summary>
     /// Base class for the file handlers with functionality to serialize/deserialize and remove file.
     /// </summary>
-    internal abstract class BaseFileHandler
+    public abstract class BaseFileHandler
     {
         #region Private Fields
 

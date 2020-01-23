@@ -6,7 +6,10 @@ using TriviaGame.ViewModels.Base;
 
 namespace TriviaGame
 {
-    internal class UserViewModel : BaseViewModel
+    /// <summary>
+    /// View Model for <see cref="UserPage"/>, which allows the user to specify his/her name.
+    /// </summary>
+    public class UserViewModel : BaseViewModel
     {
         #region Public Properties
 
@@ -38,6 +41,9 @@ namespace TriviaGame
 
         #region Constructor
 
+        /// <summary>
+        /// View Model for <see cref="UserPage"/>, which allows the user to specify his/her name.
+        /// </summary>
         public UserViewModel()
         {
             ReturnCommand = new RelayCommand(() => ChangePage(ApplicationPage.First));
@@ -59,8 +65,7 @@ namespace TriviaGame
             }
             else
             {
-                User user = new User(UserName);
-                ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).User = user;
+                ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).User = new User(UserName); ;
                 ChangePage(ApplicationPage.Game);
             }
         }

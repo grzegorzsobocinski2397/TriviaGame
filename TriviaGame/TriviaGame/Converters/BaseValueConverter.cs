@@ -6,7 +6,7 @@ using System.Windows.Markup;
 namespace TriviaGame
 {
     /// <summary>
-    /// Base class for converters that do convert values to specific XAML objects/properties.
+    /// Base class for converters that convert values to specific XAML objects/properties.
     /// </summary>
     public abstract class BaseValueConverter<T> : MarkupExtension, IValueConverter
          where T : class, new()
@@ -14,7 +14,7 @@ namespace TriviaGame
         #region Private Members
 
         /// <summary>
-        /// A single static instance of this value converter
+        /// A single static instance of this value converter.
         /// </summary>
 
         private static T converter = null;
@@ -24,7 +24,7 @@ namespace TriviaGame
         #region Public Properties
 
         /// <summary>
-        /// Provides a static instance of the value converter
+        /// Provides an instance of the value converter.
         /// </summary>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {

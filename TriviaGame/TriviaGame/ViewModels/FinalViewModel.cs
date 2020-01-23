@@ -8,18 +8,12 @@ using TriviaGame.ViewModels.Base;
 
 namespace TriviaGame
 {
-    internal class FinalViewModel : BaseViewModel
+    /// <summary>
+    /// View Model for <see cref="FinalScorePage"/> that displays quick results of the game.
+    /// Allows the user to go to <see cref="HighscoresPage"/>, <see cref="ResultsPage"/> or exit the application.
+    /// </summary>
+    public class FinalViewModel : BaseViewModel
     {
-        #region Private Fields
-
-
-        /// <summary>
-        /// File handler for a <see cref="Scoreboard"/>, which saves user information with AES encryption.
-        /// </summary>
-        private readonly HighscoresFileHandler fileHandler = new HighscoresFileHandler();
-
-        #endregion Private Fields
-
         #region Public Properties
 
         /// <summary>
@@ -59,11 +53,15 @@ namespace TriviaGame
 
         #region Constructor
 
+        /// <summary>
+        /// View Model for <see cref="FinalScorePage"/> that displays quick results of the game.
+        /// Allows the user to go to <see cref="HighscoresPage"/>, <see cref="ResultsPage"/> or exit the application.
+        /// </summary>
         public FinalViewModel()
         {
             ExitCommand = new RelayCommand(() => Environment.Exit(0));
-            HighscoresCommand = new RelayCommand(() => ChangePage(ApplicationPage.Highscores));
-            ResultsCommand = new RelayCommand(() => GoToResults());
+            HighscoresCommand = new RelayCommand(() => ChangePageAndSendData(ApplicationPage.Highscores));
+            ResultsCommand = new RelayCommand(() => ChangePageAndSendData(ApplicationPage.Results));
 
             // Register the MVVM light message to get the answers from GameViewModel.
             MessengerInstance.Register<NotificationMessage<List<Answer>>>(this, SummarizeGame);
@@ -73,9 +71,13 @@ namespace TriviaGame
 
         #region Private Methods
 
-        private void GoToResults()
+        /// <summary>
+        /// Move the Application to a different page and send the results there.
+        /// </summary>
+        /// <param name="page">New page, which is either <see cref="ApplicationPage.Results"/> or <see cref="ApplicationPage.Highscores"/>.</param>
+        private void ChangePageAndSendData(ApplicationPage page)
         {
-            ChangePage(ApplicationPage.Results);
+            ChangePage(page);
 
             MessengerInstance.Send(new NotificationMessage<List<Answer>>(answers, "Results"));
         }
@@ -94,6 +96,7 @@ namespace TriviaGame
                 MainText = $"You've answered {totalCorrectAnswers} questions correctly out of {answers.Count}";
             }
         }
+
         #endregion Private Methods
     }
 }

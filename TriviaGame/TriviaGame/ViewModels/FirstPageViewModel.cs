@@ -1,5 +1,4 @@
 ﻿using Microsoft.Win32;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -10,14 +9,17 @@ using TriviaGame.ViewModels.Base;
 
 namespace TriviaGame
 {
-    internal class FirstPageViewModel : BaseViewModel
+    /// <summary>
+    /// View Model for <see cref="FirstPage"/>, which can start the game, display highscores or load new questions.
+    /// </summary>
+    public class FirstPageViewModel : BaseViewModel
     {
         #region Private Fields
 
         /// <summary>
-        /// Name of the file that will contain serialized questions.
+        /// Link to the repository of this project.
         /// </summary>
-        private const string FILE_NAME = "QUESTIONS.XML";
+        private const string REPOSITORY_URL = "https://github.com/grzegorzsobocinski2397/TriviaGame";
 
         /// <summary>
         /// Allow user to go to the next page. User has loaded question and is ready to play.
@@ -25,7 +27,7 @@ namespace TriviaGame
         private bool areQuestionsLoaded = false;
 
         /// <summary>
-        /// File handler for a <see cref="Save"/>, which saves questions.
+        /// File handler for a <see cref="Save"/>, which serializes questions with AES encryption.
         /// </summary>
         private readonly SaveFileHandler fileHandler = new SaveFileHandler();
 
@@ -43,17 +45,17 @@ namespace TriviaGame
         #region Commands
 
         /// <summary>
-        /// Opens up the System Browser to select new files.
+        /// Open up the System Browser to select new files.
         /// </summary>
         public ICommand LoadCommand { get; set; }
 
         /// <summary>
-        /// Moves the user to <see cref="ApplicationPage.Highscores"/> page.
+        /// Move the user to <see cref="ApplicationPage.Highscores"/> page.
         /// </summary>
         public ICommand HighscoresCommand { get; set; }
 
         /// <summary>
-        /// Moves the user to <see cref="ApplicationPage.User"/> page.
+        /// Move the user to <see cref="ApplicationPage.User"/> page.
         /// </summary>
         public ICommand UserPageCommand { get; set; }
 
@@ -66,6 +68,9 @@ namespace TriviaGame
 
         #region Constructor
 
+        /// <summary>
+        /// View Model for <see cref="FirstPage"/>, which can start the game, display highscores or load new questions.
+        /// </summary>
         public FirstPageViewModel()
         {
             HighscoresCommand = new RelayCommand(() => ChangePage(ApplicationPage.Highscores));
@@ -99,7 +104,7 @@ namespace TriviaGame
         /// </summary>
         private void CheckForFile()
         {
-            if (File.Exists($"{Environment.CurrentDirectory}\\{FILE_NAME}"))
+            if (fileHandler.DoesFileExist())
             {
                 Save save = fileHandler.DeserializeQuestions();
                 areQuestionsLoaded = true;
@@ -154,8 +159,9 @@ namespace TriviaGame
         /// </summary>
         private void OpenGitHubPage()
         {
-            System.Diagnostics.Process.Start("https://github.com/grzegorzsobocinski2397/TriviaGame");
+            System.Diagnostics.Process.Start(REPOSITORY_URL);
         }
+
         #endregion Private Methods
     }
 }

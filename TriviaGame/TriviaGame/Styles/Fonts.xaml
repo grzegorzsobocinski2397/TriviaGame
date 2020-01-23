@@ -6,5 +6,4 @@
     <system:Double x:Key="FontSizeLarge">64</system:Double>
     <system:Double x:Key="FontSizeSemiLarge">28</system:Double>
     <system:Double x:Key="FontSizeRegular">24</system:Double>
-
 </ResourceDictionary>

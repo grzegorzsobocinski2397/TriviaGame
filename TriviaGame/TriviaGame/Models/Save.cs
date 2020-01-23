@@ -7,7 +7,7 @@ namespace TriviaGame.Models
     /// Save object that will contain all the questions loaded by the user.
     /// </summary>
     [DataContract(Name = "Save")]
-    internal class Save
+    public class Save
     {
         #region Public Properties
 
@@ -22,9 +22,9 @@ namespace TriviaGame.Models
         #region Constructor
 
         /// <summary>
-        /// Initalize the insance of Save.
+        /// Save object that will contain all the questions loaded by the user.
         /// </summary>
-        /// <param name="question"></param>
+        /// <param name="questions">List of all questions loaded by the user.</param>
         public Save(List<Question> questions)
         {
             Questions = questions;

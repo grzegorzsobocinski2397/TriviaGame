@@ -1,29 +1,38 @@
-﻿using System.Collections.Generic;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System.Collections.Generic;
 using System.Windows.Input;
 using TriviaGame.Models;
 using TriviaGame.ViewModels.Base;
 
 namespace TriviaGame
 {
-    internal class HighscoresViewModel : BaseViewModel
+    /// <summary>
+    /// View Model for <see cref="HighscoresPage"/>, which displayes score summary of all the other games.
+    /// </summary>
+    public class HighscoresViewModel : BaseViewModel
     {
-        #region Interal Properties
+        #region Private Fields
+
+        /// <summary>
+        /// All questions answered by the user.
+        /// </summary>
+        private List<Answer> answers;
+
+        /// <summary>
+        /// File handler for a <see cref="Scoreboard"/>, which saves user information with AES encryption.
+        /// </summary>
+        private readonly HighscoresFileHandler highscoresFileHandler = new HighscoresFileHandler();
+
+        #endregion Private Fields
+
+        #region Public Properties
 
         /// <summary>
         ///Users that have played the game before.
         /// </summary>
         public List<User> Users { get; set; }
 
-        #endregion Interal Properties
-
-        #region Private Fields
-
-        /// <summary>
-        ///
-        /// </summary>
-        private readonly HighscoresFileHandler highscoresFileHandler = new HighscoresFileHandler();
-
-        #endregion Private Fields
+        #endregion Public Properties
 
         #region Commands
 
@@ -36,10 +45,16 @@ namespace TriviaGame
 
         #region Constructor
 
+        /// <summary>
+        /// View Model for <see cref="HighscoresPage"/>, which displayes score summary of all the other games.
+        /// </summary>
         public HighscoresViewModel()
         {
             ReturnCommand = new RelayCommand(() => ReturnToPreviousPage());
             Users = highscoresFileHandler.DoesFileExist() ? GetUsers() : new List<User>();
+
+            // Register the MVVM light message to get the answers from FinalViewModel.
+            MessengerInstance.Register<NotificationMessage<List<Answer>>>(this, GetAnswers);
         }
 
         #endregion Constructor
@@ -64,10 +79,25 @@ namespace TriviaGame
             if (GetPreviousPage() == ApplicationPage.FinalScore)
             {
                 ChangePage(ApplicationPage.FinalScore);
+
+                MessengerInstance.Send(new NotificationMessage<List<Answer>>(answers, "FinalView"));
             }
             else
             {
                 ChangePage(ApplicationPage.First);
+            }
+        }
+
+        /// <summary>
+        /// Get all the answers from the <see cref="FinalViewModel"/>
+        /// </summary>
+        /// <param name="message">MVVM Light message sent from the <see cref="FinalViewModel"/>/></param>
+        private void GetAnswers(NotificationMessage<List<Answer>> message)
+        {
+            // Continue if the message notification matches
+            if (message.Notification == "Results")
+            {
+                answers = message.Content;
             }
         }
 

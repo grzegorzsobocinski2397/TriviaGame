@@ -9,7 +9,10 @@ using TriviaGame.ViewModels;
 
 namespace TriviaGame
 {
-    internal class GameViewModel : BaseViewModel
+    /// <summary>
+    /// View Model for <see cref="GamePage"/> that controls the flow of the game.
+    /// </summary>
+    public class GameViewModel : BaseViewModel
     {
         #region Private Fields
 
@@ -39,7 +42,7 @@ namespace TriviaGame
         private const int SCORE_MULTIPLIER = 10;
 
         /// <summary>
-        /// File handler for a <see cref="Save"/>, which saves questions.
+        /// File handler for a <see cref="Save"/>, which serializes questions with AES encryption.
         /// </summary>
         private readonly SaveFileHandler saveFileHandler = new SaveFileHandler();
 
@@ -75,6 +78,9 @@ namespace TriviaGame
 
         #region Constructor
 
+        /// <summary>
+        /// View Model for <see cref="GamePage"/> that controls the flow of the game.
+        /// </summary>
         public GameViewModel()
         {
             OptionCommand = new RelayParameterCommand((parameter) => AnswerQuestion((bool)parameter));

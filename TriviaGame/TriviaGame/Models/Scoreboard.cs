@@ -8,7 +8,7 @@ namespace TriviaGame
     /// Scoreboard that contains list of all the users that have played the game.
     /// </summary>
     [DataContract(Name = "Scoreboard")]
-    internal class Scoreboard
+    public class Scoreboard
     {
         #region Public Properties
 
@@ -23,9 +23,8 @@ namespace TriviaGame
         #region Constructor
 
         /// <summary>
-        /// Initalize the instance of Scoreboard.
+        /// Scoreboard that contains list of all the users that have played the game.
         /// </summary>
-        /// <param name="users">List of all users that have played the game.</param>
         public Scoreboard()
         {
             Users = new List<User>();

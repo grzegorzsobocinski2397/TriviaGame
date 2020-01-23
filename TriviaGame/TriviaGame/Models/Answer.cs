@@ -3,26 +3,26 @@
     /// <summary>
     /// Contains information about question asked and user's input.
     /// </summary>
-    internal class Answer
+    public class Answer
     {
         #region Public Properties
 
         /// <summary>
         /// One trivia question.
         /// </summary>
-        public Question Question { get; set; }
+        public Question Question { get; }
 
         /// <summary>
         /// User's answer.
         /// </summary>
-        public bool IsCorrect { get; set; }
+        public bool IsCorrect { get; }
 
         #endregion Public Properties
 
         #region Constructors
 
         /// <summary>
-        /// Creates instance of Answer class.
+        /// Contains information about question asked and user's input.
         /// </summary>
         /// <param name="question">User's answer.</param>
         /// <param name="isCorrect">One trivia question.</param>

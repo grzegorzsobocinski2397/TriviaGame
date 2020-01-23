@@ -6,7 +6,7 @@ namespace TriviaGame.Models
     /// One trivia question.
     /// </summary>
     [DataContract(Name = "Question")]
-    internal struct Question
+    public struct Question
     {
         #region Public Properties
 
@@ -27,7 +27,7 @@ namespace TriviaGame.Models
         #region Constructors
 
         /// <summary>
-        ///
+        /// One trivia question.
         /// </summary>
         /// <param name="content">Text of the question.</param>
         /// <param name="answer">Correct answer for the question.</param>

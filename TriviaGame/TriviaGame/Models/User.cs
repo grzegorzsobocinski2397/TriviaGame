@@ -7,7 +7,7 @@ namespace TriviaGame.Models
     /// Representation of the current player.
     /// </summary>
     [DataContract(Name = "User")]
-    internal class User
+    public class User
     {
         #region Public Properties
 
@@ -34,7 +34,7 @@ namespace TriviaGame.Models
         #region Constructors
 
         /// <summary>
-        /// Initialize the user instance.
+        /// Representation of the current player.
         /// </summary>
         /// <param name="name">User's name which will be also displayed in the highscores.</param>
         public User(string name)

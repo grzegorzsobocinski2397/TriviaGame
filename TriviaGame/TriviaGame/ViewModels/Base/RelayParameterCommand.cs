@@ -3,14 +3,18 @@ using System.Windows.Input;
 
 namespace TriviaGame
 {
-    internal class RelayParameterCommand : ICommand
+    /// <summary>
+    /// Base Command that implements <see cref="ICommand"/> for correct functionality,
+    /// it also takes a parameter that will be passed into the action.
+    /// </summary>
+    public class RelayParameterCommand : ICommand
     {
         #region Private Members
 
         /// <summary>
-        /// The action to run
+        /// Method on the View Model.
         /// </summary>
-        private Action<object> action;
+        private readonly Action<object> action;
 
         #endregion Private Members
 
@@ -26,9 +30,10 @@ namespace TriviaGame
         #region Constructor
 
         /// <summary>
-        /// Default constrcutor
+        /// Base Command that implements <see cref="ICommand"/> for correct functionality,
+        /// it also takes a parameter that will be passed into the action.
         /// </summary>
-        /// <param name="action"></param>
+        /// <param name="action">Method on the View Model.</param>
         public RelayParameterCommand(Action<object> action)
         {
             this.action = action;
@@ -39,19 +44,19 @@ namespace TriviaGame
         #region Command Methods
 
         /// <summary>
-        /// A relay command can always execute
+        /// Command can always execute.
         /// </summary>
-        /// <param name="parameter"></param>
-        /// <returns></returns>
+        /// <param name="parameter">In this case it's always null.</param>
+        /// <returns>Always true, because in our case it doesn't matter.</returns>
         public bool CanExecute(object parameter)
         {
             return true;
         }
 
         /// <summary>
-        /// Executes the commands action
+        /// Passes the parameter to an invoked action.
         /// </summary>
-        /// <param name="parameter"></param>
+        /// <param name="parameter">An any object.</param>
         public void Execute(object parameter)
         {
             action(parameter);

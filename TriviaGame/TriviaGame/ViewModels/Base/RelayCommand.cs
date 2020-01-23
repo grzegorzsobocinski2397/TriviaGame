@@ -6,34 +6,38 @@ namespace TriviaGame.ViewModels.Base
     /// <summary>
     /// Base Command that implements <see cref="ICommand"/> for correct functionality.
     /// </summary>
-    internal class RelayCommand : ICommand
+    public class RelayCommand : ICommand
     {
         /// <summary>
-        /// Action to run
+        /// Method on the View Model.
         /// </summary>
         private readonly Action action;
 
         public event EventHandler CanExecuteChanged = (sender, e) => { };
 
         /// <summary>
-        /// Default constructor
+        /// Base Command that implements <see cref="ICommand"/> for correct functionality.
         /// </summary>
-        /// <param name="action"></param>
+        /// <param name="action">A method to invoke on a View Model.</param>
         public RelayCommand(Action action)
         {
             this.action = action;
         }
 
         /// <summary>
-        /// Command can always execute
+        /// Command can always execute.
         /// </summary>
-        /// <param name="parameter"></param>
-        /// <returns></returns>
+        /// <param name="parameter">In this case it's always null.</param>
+        /// <returns>Always true, because in our case it doesn't matter.</returns>
         public bool CanExecute(object parameter)
         {
             return true;
         }
 
+        /// <summary>
+        /// Invoke the action (method) on the view model.
+        /// </summary>
+        /// <param name="parameter"></param>
         public void Execute(object parameter)
         {
             action();
