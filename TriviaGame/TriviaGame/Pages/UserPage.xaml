@@ -8,24 +8,19 @@
         <StackPanel Margin="0 120 0 0">
             <Grid Height="250" Margin="50 0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80"/>
-                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="170" />
                 </Grid.RowDefinitions>
-                <TextBlock                     
-                    Style="{StaticResource HeaderTextBlock}" 
+                <TextBlock
+                    Style="{StaticResource HeaderTextBlock}"
                     Text="What's your name?">
                 </TextBlock>
-                <TextBox       
-                    Style="{StaticResource BorderThicknessTextBox1}"
+                <TextBox
+                    Style="{StaticResource TextBox}"
                     Text="{Binding UserName, Mode=TwoWay}"
                     Margin="30"
                     Width="400"
-                    Grid.Row="1" 
-                    FontSize="28"
-                    TextWrapping="Wrap"
-                    />
-
-
+                    Grid.Row="1" />
             </Grid>
             <StackPanel
                 HorizontalAlignment="Center"
