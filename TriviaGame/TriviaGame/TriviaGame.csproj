@@ -86,7 +86,7 @@
     <Compile Include="Converters\ApplicationPageValueConverter.cs" />
     <Compile Include="Converters\BaseValueConverter.cs" />
     <Compile Include="Converters\BooleanToForegroundValueConverter.cs" />
-    <Compile Include="Encryption\EncrpytionValues.cs" />
+    <Compile Include="Encryption\EncryptionValues.cs" />
     <Compile Include="Helpers\BaseFileHandler.cs" />
     <Compile Include="Helpers\HighscoresFileHandler.cs" />
     <Compile Include="Helpers\SaveFileHandler.cs" />
