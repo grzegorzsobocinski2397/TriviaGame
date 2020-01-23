@@ -57,6 +57,11 @@ namespace TriviaGame
         /// </summary>
         public ICommand UserPageCommand { get; set; }
 
+        /// <summary>
+        /// Open the GitHub repository.
+        /// </summary>
+        public ICommand OpenGitHubCommand { get; set; }
+
         #endregion Commands
 
         #region Constructor
@@ -66,6 +71,7 @@ namespace TriviaGame
             HighscoresCommand = new RelayCommand(() => ChangePage(ApplicationPage.Highscores));
             UserPageCommand = new RelayCommand(() => StartGame());
             LoadCommand = new RelayCommand(() => OpenFileDialog());
+            OpenGitHubCommand = new RelayCommand(() => OpenGitHubPage());
             CheckForFile();
         }
 
@@ -143,6 +149,13 @@ namespace TriviaGame
             }
         }
 
+        /// <summary>
+        /// Opens GitHub repository of this project in default browser.
+        /// </summary>
+        private void OpenGitHubPage()
+        {
+            System.Diagnostics.Process.Start("https://github.com/grzegorzsobocinski2397/TriviaGame");
+        }
         #endregion Private Methods
     }
 }

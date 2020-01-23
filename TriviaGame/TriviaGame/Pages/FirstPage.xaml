@@ -51,11 +51,22 @@
                 Margin="30 0">
                 <Image
                     Source="/Resources/Vector.png"
-                    Width="60" Margin="0,15,0,5" />
+                    Cursor="Hand"
+                    Width="60" 
+                    Margin="0,15,0,5" >
+                    <Image.InputBindings>
+                        <MouseBinding Command="{Binding OpenGitHubCommand}" MouseAction="LeftClick"/>
+                    </Image.InputBindings>
+                </Image>
                 <TextBlock
                     FontSize="{StaticResource FontSizeRegular}"
+                    Cursor="Hand"
                     Foreground="{StaticResource BlackForegroundBrush}"
-                    Margin="20,53,0,5" Text="Check out our GitHub page!" />
+                    Margin="20,53,0,5" Text="Check out our GitHub page!" >
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding OpenGitHubCommand}" MouseAction="LeftClick"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
             </StackPanel>
         </StackPanel>
     </Grid>
