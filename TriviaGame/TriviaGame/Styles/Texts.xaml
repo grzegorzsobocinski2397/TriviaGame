@@ -31,4 +31,16 @@
         <Setter Property="BorderThickness" Value="0, 0,0,1" />
         <Setter Property="Background" Value="Transparent" />
     </Style>
+
+    <!-- Textboxvol1, ten wyzej nie dziala -->
+    <Style x:Key="BorderThicknessTextBox1" TargetType="TextBox">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="Foreground" Value="#E0AE66"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="BorderThickness" Value="0, 0,0,1"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
 </ResourceDictionary>
