@@ -27,6 +27,11 @@ namespace TriviaGame.ViewModels
         /// </summary>
         public ApplicationPage CurrentPage { get; set; }
 
+        /// <summary>
+        /// Previous page displayed in the application.
+        /// </summary>
+        public ApplicationPage PreviousPage { get; set; }
+
         #endregion Public Properties
 
         #region Commands

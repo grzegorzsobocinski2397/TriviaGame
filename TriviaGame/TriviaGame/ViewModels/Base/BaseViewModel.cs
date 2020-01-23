@@ -33,7 +33,19 @@ namespace TriviaGame
         /// <param name="page">Redirect application to this page.</param>
         protected void ChangePage(ApplicationPage page)
         {
-            ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = page;
+            WindowViewModel windowViewModel = ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext);
+            windowViewModel.PreviousPage = windowViewModel.CurrentPage;
+            windowViewModel.CurrentPage = page;
+
+        }
+
+        /// <summary>
+        /// Returns previously visited page.
+        /// </summary>
+        /// <returns>Previously visited page.</returns>
+        protected ApplicationPage GetPreviousPage()
+        {
+            return ((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage;
         }
 
         #endregion Protected Methods
