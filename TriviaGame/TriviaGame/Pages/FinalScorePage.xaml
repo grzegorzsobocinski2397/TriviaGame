@@ -1,23 +1,21 @@
-﻿<Page x:Class="TriviaGame.Pages.FinalScorePage"
+﻿<Page x:Class="TriviaGame.FinalScorePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d"  Height="600" Width="780"
+        Height="600" Width="780"
       Title="FinalScorePage">
 
     <Grid Background="{StaticResource ApplicationBackgroundBrush}">
         <StackPanel Margin="0 120 0 0">
             <Grid Height="250" Margin="50 0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80"/>
-                    <RowDefinition Height="170"/>
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="170" />
                 </Grid.RowDefinitions>
                 <TextBlock
                     Style="{StaticResource HeaderTextBlock}"
                     Text="Final Score">
                 </TextBlock>
-                <TextBlock      
+                <TextBlock
                     Style="{StaticResource LightBrownContent}"
                     Text="{Binding MainText}"
                     Margin="30"

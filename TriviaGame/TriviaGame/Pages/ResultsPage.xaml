@@ -1,4 +1,4 @@
-﻿<Page x:Class="TriviaGame.Pages.ResultsPage"
+﻿<Page x:Class="TriviaGame.ResultsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:local="clr-namespace:TriviaGame" Height="600" Width="780"
@@ -6,11 +6,11 @@
 
     <Grid Background="{StaticResource ApplicationBackgroundBrush}">
         <TextBlock Text="{Binding MainText}"
-                   Style="{StaticResource HeaderTextBlock}" 
+                   Style="{StaticResource HeaderTextBlock}"
                    VerticalAlignment="Top"
-                   Margin="40"  />
+                   Margin="40" />
         <Button
-            Command="{Binding ReturnCommand}" 
+            Command="{Binding ReturnCommand}"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Margin="50 65 "
@@ -21,15 +21,15 @@
                 <Path Fill="Black" Data="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
             </Canvas>
         </Button>
-        <ListView ItemsSource="{Binding Answers}" 
-                  Margin="0,0,0,100" 
-                  HorizontalAlignment="Center"  
-                  VerticalAlignment="Center" >
+        <ListView ItemsSource="{Binding Answers}"
+                  Margin="0,0,0,100"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock HorizontalAlignment="Center" 
+                    <TextBlock HorizontalAlignment="Center"
                                VerticalAlignment="Center"
-                               TextAlignment="Center" 
+                               TextAlignment="Center"
                                Width="700"
                                Text="{Binding Question.Content}"
                                Foreground="{Binding IsCorrect, Converter={local:BooleanToForegroundValueConverter}}" ></TextBlock>
