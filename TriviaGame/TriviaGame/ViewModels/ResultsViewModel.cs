@@ -59,7 +59,7 @@ namespace TriviaGame
             if (message.Notification == "Results")
             {
                 Answers = message.Content;
-                int totalCorrectAnswers = Answers.Select(a => a.IsCorrect).ToList().Count;
+                int totalCorrectAnswers = Answers.Where(a => a.IsCorrect).ToList().Count;
                 MainText = $"{totalCorrectAnswers}/{Answers.Count}";
             }
         }
