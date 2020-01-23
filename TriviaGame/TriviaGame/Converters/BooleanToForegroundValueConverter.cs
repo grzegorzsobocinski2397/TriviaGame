@@ -16,7 +16,7 @@ namespace TriviaGame
         /// <returns><see cref="SolidColorBrush"/></returns>
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (bool)value ? new SolidColorBrush(Colors.Red) : new SolidColorBrush(Colors.Green);
+            return (bool)value ? new SolidColorBrush(Colors.Green) : new SolidColorBrush(Colors.Red);
         }
 
         /// <summary>
