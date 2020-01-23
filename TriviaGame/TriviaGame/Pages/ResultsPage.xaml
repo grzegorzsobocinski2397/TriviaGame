@@ -4,13 +4,24 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:TriviaGame"
-      mc:Ignorable="d"  Height="600" Width="480"
-      Title="HighscoresPage">
+      mc:Ignorable="d"  Height="600" Width="780"
+      Title="ResultsPage">
 
-    <Grid>
-        <TextBlock Text="{Binding MainText}" Foreground="Red" HorizontalAlignment="Left" Margin="174,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="66" Width="104" />
-        <Button Command="{Binding ReturnCommand}" Content="Return" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top" Width="75" />
-        <ListView ItemsSource="{Binding Answers}" HorizontalAlignment="Left" Height="100" Margin="36,229,0,0" VerticalAlignment="Top" Width="385">
+    <Grid Background="{StaticResource ApplicationBackgroundBrush}">
+        <TextBlock Text="{Binding MainText}" Style="{StaticResource HeaderTextBlock}" Margin="40" HorizontalAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" />
+        <Button
+            Command="{Binding ReturnCommand}" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+             Margin="50 65 "
+            Background="#664346"
+            Foreground="#664346"
+            BorderThickness="0">
+            <Canvas Width="24" Height="24">
+                <Path Fill="Black" Data="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+            </Canvas>
+        </Button>
+        <ListView ItemsSource="{Binding Answers}" HorizontalAlignment="Center" Height="380" Margin="180" VerticalAlignment="Top" Width="680">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Question.Content}" Foreground="{Binding IsCorrect, Converter={local:BooleanToForegroundValueConverter}}" ></TextBlock>
