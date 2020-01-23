@@ -48,12 +48,3 @@
         </StackPanel>
     </Grid>
 </Page>
-
-<!--<Grid>
-        <Button Command="{Binding ReturnCommand}"  Content="Return" HorizontalAlignment="Left" Margin="58,391,0,0" VerticalAlignment="Top" Width="75" Height="37" RenderTransformOrigin="-2.336,5.519"/>
-        <Button Command="{Binding StartCommand}" Content="Button" HorizontalAlignment="Left" Margin="254,408,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.442,1.001"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="108,207,0,0" TextWrapping="Wrap" Text="{Binding UserName, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-        <TextBlock Foreground="Red" Text="{Binding InformationText}"  HorizontalAlignment="Left" Margin="131,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55"/>
-
-    </Grid>
-</Page>-->
