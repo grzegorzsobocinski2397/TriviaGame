@@ -15,14 +15,13 @@
                 </Grid.RowDefinitions>
                 <TextBlock
                     Style="{StaticResource HeaderTextBlock}"
-                    Text="Welcome to Trivia Game!">
+                    Text="Final Score">
                 </TextBlock>
                 <TextBlock      
                     Style="{StaticResource LightBrownContent}"
+                    Text="{Binding MainText}"
                     Margin="30"
-                    Grid.Row="1" 
-                    FontSize="28"
-                    Text="sfsdfsfsf" >
+                    Grid.Row="1">
                 </TextBlock>
             </Grid>
             <StackPanel
@@ -48,18 +47,6 @@
                     Margin="50 0 80 0"
                     Content="Results"
                     HorizontalAlignment="Right" />
-            </StackPanel>
-            <StackPanel
-                Height="90"
-                Orientation="Horizontal"
-                Margin="30 0">
-                <Image
-                    Source="/Resources/Vector.png"
-                    Width="60" Margin="0,15,0,5" />
-                <TextBlock
-                    FontSize="{StaticResource FontSizeRegular}"
-                    Foreground="{StaticResource BlackForegroundBrush}"
-                    Margin="20,53,0,5" Text="Check out our GitHub page!" />
             </StackPanel>
         </StackPanel>
     </Grid>
