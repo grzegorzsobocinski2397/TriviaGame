@@ -18,7 +18,7 @@
             Foreground="#664346"
             BorderThickness="0">
             <Canvas  Width="24" Height="24">
-                <Path Fill="Black" Data="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                <Path Fill="{StaticResource LightBrownForegroundBrush}" Data="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
             </Canvas>
         </Button>
         <ListView ItemsSource="{Binding Answers}"

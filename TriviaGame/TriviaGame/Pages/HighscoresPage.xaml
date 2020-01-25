@@ -4,37 +4,53 @@
       Height="600" Width="780"
       Title="HighscoresPage">
 
-    <Grid Background="{StaticResource ApplicationBackgroundBrush}">
+    <StackPanel Background="{StaticResource ApplicationBackgroundBrush}" Orientation="Vertical">
         <TextBlock Text="Highscores" 
                    Style="{StaticResource HeaderTextBlock}" 
-                   Margin="40" 
+                   Margin="0 40 0 0" 
                    VerticalAlignment="Top"/>
         <Button
             Command="{Binding ReturnCommand}" 
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-             Margin="50 65 "
+             Margin="40 -50 0 50 "
             Background="#664346"
             Foreground="#664346"
             BorderThickness="0">
             <Canvas Width="24" Height="24">
-                <Path Fill="Black" Data="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+                <Path Fill="{StaticResource LightBrownForegroundBrush}" Data="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
             </Canvas>
         </Button>
         <ListView ItemsSource="{Binding Users}" 
-                  Margin="0,100,0,100" 
                   HorizontalAlignment="Center"  
-                  VerticalAlignment="Center"
+                  VerticalAlignment="Center" 
+                  Height="500"
                   >
-            <ListView.ItemTemplate>
+            <ListView.ItemTemplate >
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="Red" Text="{Binding Name}"></TextBlock>
-                        <TextBlock Foreground="Green" Text="{Binding Score}"></TextBlock>
-                        <TextBlock Foreground="Blue" Text="{Binding StartDate}"></TextBlock>
+                    <StackPanel  >
+                        <Border
+                            BorderBrush="{StaticResource LightBrownForegroundBrush}"
+                            BorderThickness="0,0,0, 1">
+                        <Grid                            
+                            Height="30" Width="700" Margin="0 5"
+                            >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding Name}" Style="{StaticResource HighscoreTextBlock}" Width="325" ></TextBlock>
+                            <TextBlock Foreground="Green" Text="{Binding Score}" Style="{StaticResource HighscoreTextBlock}"  Grid.Column="2" Width="50" HorizontalAlignment="Right"></TextBlock>
+                            <TextBlock Foreground="Blue" Text="{Binding StartDate}" Style="{StaticResource HighscoreTextBlock}" Width="325"   Grid.Column="1"></TextBlock>
+                        </Grid>
+                        </Border>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </Grid>
+    </StackPanel>
 </Page>
+<!--<TextBlock Foreground="Red" Text="{Binding Name}"></TextBlock>
+<TextBlock Foreground="Green" Text="{Binding Score}"></TextBlock>
+<TextBlock Foreground="Blue" Text="{Binding StartDate}"></TextBlock>-->
