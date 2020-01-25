@@ -27,10 +27,10 @@
                 Margin="50 20"
                 Height="100">
                 <Button
-                    Command="{Binding UserPageCommand}"
+                    Command="{Binding LoadCommand}"
                     Style="{StaticResource RoundButtonTemplate}"
                     Margin="80 0 50 0"
-                    Content="Start"
+                    Content="Load"
                     HorizontalAlignment="Left" />
                 <Button
                     Command="{Binding HighscoresCommand}"
@@ -38,11 +38,11 @@
                     Margin="50 0"
                     Content="Highscores"
                     HorizontalAlignment="Center" />
-                <Button
-                    Command="{Binding LoadCommand}"
+                <Button                
+                    Command="{Binding UserPageCommand}"
                     Style="{StaticResource RoundButtonTemplate}"
                     Margin="50 0 80 0"
-                    Content="Load"
+                    Content="Start"
                     HorizontalAlignment="Right" />
             </StackPanel>
             <StackPanel
