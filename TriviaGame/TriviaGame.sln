@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriviaGame", "TriviaGame\TriviaGame.csproj", "{AFA6DA0B-1946-4920-B7C1-7154FC9A43EC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TriviaInstall", "TriviaInstall\TriviaInstall.vdproj", "{5168EAE5-391D-4159-B85E-2D6AB069DD45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{AFA6DA0B-1946-4920-B7C1-7154FC9A43EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFA6DA0B-1946-4920-B7C1-7154FC9A43EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFA6DA0B-1946-4920-B7C1-7154FC9A43EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5168EAE5-391D-4159-B85E-2D6AB069DD45}.Debug|Any CPU.ActiveCfg = Release
+		{5168EAE5-391D-4159-B85E-2D6AB069DD45}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
