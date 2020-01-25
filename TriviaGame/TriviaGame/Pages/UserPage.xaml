@@ -37,7 +37,7 @@
                     Command="{Binding StartCommand}"
                     Style="{StaticResource RoundButtonTemplate}"
                     Margin="50 0 80 0"
-                    Content="Start"
+                    Content="Begin"
                     HorizontalAlignment="Right" />
             </StackPanel>
         </StackPanel>
