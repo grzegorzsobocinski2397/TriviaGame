@@ -9,6 +9,10 @@ Aplikacja serializuje wyniki osiągnięte przez gracza i wyświetla je w formie 
 # Instalacja
 Projekt wystarczy sklonować a następnie pobrać wymagane paczki. 
 
+# Dokumentacja 
+Dokumentację do projektu można znaleźć [tutaj](https://drive.google.com/open?id=1h-HA53iq0vtZJpSnOrtFQwtefmvJ8fsv).
+Po otwarciu pliku <b>index.html</b> zobaczymy pełną dokumentację.
+
 # Jak używać
 Pytania należy zapisać w formacie .CSV 
 Prawidłowe zdania oznaczamy cyfrą 1 natomiast fałszywe 0.
