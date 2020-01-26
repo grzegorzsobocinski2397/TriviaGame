@@ -6,9 +6,6 @@ Aplikacja służąca do szybkiej zabawy w grę prawda lub fałsz z dowolnymi pyt
 Aplikacja serializuje wczytane pytania oraz szyfruje (używając AES) do ponownej szybkiej gry. 
 Aplikacja serializuje wyniki osiągnięte przez gracza i wyświetla je w formie tabeli wyników. 
 
-# Figma Design
-<a>https://www.figma.com/file/SRWnWS84i3dmvjowB2w5zw/Projekt-Semestralny?node-id=0%3A1</a>
-
 # Instalacja
 Projekt wystarczy sklonować a następnie pobrać wymagane paczki. 
 
@@ -23,6 +20,9 @@ Prawidłowe zdania oznaczamy cyfrą 1 natomiast fałszywe 0.
 
 Plik powinien mieć dwie kolumny oraz dowolną ilość wierszy. Pytania wczytujemy przy pomocy przycisku Load.
 Pytania są serializowane, dzięki czemu nie musimy za każdym razem wczytywać pytań. Wynik użytkownika zostaje dodany do pliku z rekordami.
+
+# Figma Design
+<a>https://www.figma.com/file/SRWnWS84i3dmvjowB2w5zw/Projekt-Semestralny?node-id=0%3A1</a>
 
 # Autorzy
 
