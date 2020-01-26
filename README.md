@@ -12,6 +12,18 @@ Aplikacja serializuje wyniki osiągnięte przez gracza i wyświetla je w formie 
 # Instalacja
 Projekt wystarczy sklonować a następnie pobrać wymagane paczki. 
 
+# Jak używać
+Pytania należy zapisać w formacie .CSV 
+Prawidłowe zdania oznaczamy cyfrą 1 natomiast fałszywe 0.
+
+| Statement         | Answer |
+|---------------------|---|
+| Pigs are pink.      | 1 |
+| Santa Claus exists. | 0 |
+
+Plik powinien mieć dwie kolumny oraz dowolną ilość wierszy. Pytania wczytujemy przy pomocy przycisku Load.
+Pytania są serializowane, dzięki czemu nie musimy za każdym razem wczytywać pytań. Wynik użytkownika zostaje dodany do pliku z rekordami.
+
 # Autorzy
 
 - Grzegorz Sobociński -  [grzegorzsobocinski2397](https://github.com/grzegorzsobocinski2397) 
