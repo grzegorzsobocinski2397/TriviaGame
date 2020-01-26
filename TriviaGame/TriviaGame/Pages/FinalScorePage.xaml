@@ -17,6 +17,7 @@
                 </TextBlock>
                 <TextBlock
                     Style="{StaticResource LightBrownContent}"
+                    Foreground="Green"
                     Text="{Binding MainText}"
                     Margin="30"
                     Grid.Row="1">

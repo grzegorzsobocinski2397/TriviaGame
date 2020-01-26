@@ -4,27 +4,27 @@
       xmlns:local="clr-namespace:TriviaGame" Height="600" Width="780"
       Title="ResultsPage">
 
-    <Grid Background="{StaticResource ApplicationBackgroundBrush}">
-        <TextBlock Text="{Binding MainText}"
-                   Style="{StaticResource HeaderTextBlock}"
-                   VerticalAlignment="Top"
-                   Margin="40" />
+    <StackPanel Background="{StaticResource ApplicationBackgroundBrush}" Orientation="Vertical">
+        <TextBlock Text="Highscores" 
+                   Style="{StaticResource HeaderTextBlock}" 
+                   Margin="0 40 0 0" 
+                   VerticalAlignment="Top"/>
         <Button
-            Command="{Binding ReturnCommand}"
+            Command="{Binding ReturnCommand}" 
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Margin="50 65 "
+             Margin="40 -50 0 50 "
             Background="#664346"
             Foreground="#664346"
             BorderThickness="0">
-            <Canvas  Width="24" Height="24">
+            <Canvas Width="24" Height="24">
                 <Path Fill="{StaticResource LightBrownForegroundBrush}" Data="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
             </Canvas>
         </Button>
         <ListView ItemsSource="{Binding Answers}"
-                  Margin="0,0,0,100"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center">
+                  HorizontalAlignment="Center"  
+                  VerticalAlignment="Center" 
+                  Height="400">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextBlock HorizontalAlignment="Center"
@@ -36,5 +36,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </Grid>
+    </StackPanel>
 </Page>

@@ -24,7 +24,7 @@
         <ListView ItemsSource="{Binding Users}" 
                   HorizontalAlignment="Center"  
                   VerticalAlignment="Center" 
-                  Height="500"
+                  Height="400"
                   >
             <ListView.ItemTemplate >
                 <DataTemplate>
