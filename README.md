@@ -28,7 +28,7 @@ Pytania są serializowane, dzięki czemu nie musimy za każdym razem wczytywać 
 # Figma Design
 <a>https://www.figma.com/file/SRWnWS84i3dmvjowB2w5zw/Projekt-Semestralny?node-id=0%3A1</a>
 
-# Autorzy
+# Autorzy oraz podział obowiązków
 
-- Grzegorz Sobociński -  [grzegorzsobocinski2397](https://github.com/grzegorzsobocinski2397) 
-- Piotr Szczypka - [xkertoip](https://github.com/xkertoip)
+- Grzegorz Sobociński - 65% lider, models & viewmodels, dokumentacja, figma [grzegorzsobocinski2397](https://github.com/grzegorzsobocinski2397) 
+- Piotr Szczypka - 35% views, instalator, figma [xkertoip](https://github.com/xkertoip)
